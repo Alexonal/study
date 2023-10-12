@@ -1,0 +1,6 @@
+<!--pages/list/lj/lj.wxml-->
+<view class="Gui">
+    <text>
+    敬请期待
+    </text>
+  </view>

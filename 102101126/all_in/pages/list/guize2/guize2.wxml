@@ -1,0 +1,54 @@
+<!--pages/list/guize2/guize2.wxml-->
+<view class="Gui">
+    <text>
+    奖励分示例
+    </text>
+  </view>
+
+  <view class="Gui1" style="margin-top: 20px;">
+    <text>◆双对 10分</text>
+    <text>五个骰子中有两对相同的点数，例如22551</text>
+  </view>
+
+  <view class="Gui2" style="margin-top: 20px;">
+    <text>◆三连 10分</text>
+    <text>五个骰子中有三个点数相同，例如11156</text>
+  </view>
+
+  <view class="Gui3" style="margin-top: 20px;">
+    <text>◆葫芦 20分</text>
+    <text>五个骰子中有三连，且剩下两骰子点数一</text>
+    <text>样，例如55566</text>
+  </view>
+
+  <view class="Gui4" style="margin-top: 20px;">
+    <text>◆四连 10分</text>
+    <text>五个骰子中有四个点数相同，例如22223</text>
+  </view>
+
+  <view class="Gui4" style="margin-top: 20px;">
+    <text>◆五连 100分</text>
+    <text>五个骰子中有五个点数相同，例如66666</text>
+  </view>
+
+  <view class="Gui6" style="margin-top: 20px;">
+    <text>◆小顺子 30分</text>
+    <text>五个骰子中有四个点数连续，例如12346</text>
+  </view>
+
+  <view class="Gui6" style="margin-top: 20px;">
+    <text>◆大顺子 60分</text>
+    <text>五个骰子的点数均连续，例如12345</text>
+  </view>
+
+  <view class="GuiX2w">
+    <navigator url="/pages/list/guize/guize"open-type="navigate">
+    <button type="" bindtap="goX2">上一页</button>
+    </navigator>
+  </view>
+
+  <view class="GuiX2p">
+    <navigator url="/pages/list/guize3/guize3"open-type="navigate">
+    <button type="" bindtap="goX3">下一页</button>
+    </navigator>
+  </view>

@@ -1,0 +1,9 @@
+<!--pages/list/jf/jf.wxml-->
+<view class="image-parent">
+<navigator url="/pages/list/caidan2/caidan2" open-type="navigate">
+<image src="/pg/排行榜-页面 1.png" class="image"></image></navigator>
+<navigator url="/pages/list/list" open-type="navigate">
+<button class="answer-button" bindtap="onSelectAnswerA">返回</button></navigator>
+  </view>
+
+  

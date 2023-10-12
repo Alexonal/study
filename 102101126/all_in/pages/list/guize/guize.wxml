@@ -1,0 +1,43 @@
+<!--pages/list/guize/guize.wxml-->
+<view class="Gui">
+    <text>
+    游戏规则
+    </text>
+  </view>
+  <view class="Gui1" style="margin-top: 20px;">
+    <text>◇进入游戏，选择游戏模式，设置游戏局数</text>
+    <text>和玩家个人筹码数.</text>
+  </view>
+
+  <view class="Gui2" style="margin-top: 50px;">
+    <text>◇每一局游戏内有三轮投掷机会，玩家一人</text>
+    <text>一次轮流投掷骰子，每个玩家有5个骰子.</text>
+  </view>
+
+  <view class="Gui3" style="margin-top: 50px;">
+    <text>◇前两次投掷骰子之后可以选择锁定0~5个</text>
+    <text>骰子，锁定的骰子位于选定区域不再改变.</text>
+  </view>
+
+  <view class="Gui4" style="margin-top: 50px;">
+    <text>◇前两轮每轮投掷结束并在所有玩家锁定骰</text>
+    <text>子后，每位玩家可以选择增加倍率：0-3.</text>
+  </view>
+
+  <view class="Gui5" style="margin-top: 50px;">
+    <text>◇第三轮投掷结束后，所有玩家的全部骰子</text>
+    <text>锁定并计分,得分为点数总和+奖励分</text>
+    <text></text>
+  </view>
+
+  <view class="GuiX1w">
+    <navigator url="/pages/list/list"open-type="navigate">
+    <button type="" bindtap="goX0">主菜单</button>
+    </navigator>
+  </view>
+
+  <view class="GuiX1p">
+    <navigator url="/pages/list/guize2/guize2"open-type="navigate">
+    <button type="" bindtap="goX1">下一页</button>
+    </navigator>
+  </view>

@@ -1,0 +1,24 @@
+/* pages/list/win/win.wxss */
+.Gui{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size:30px
+  }
+
+.tapimg1{  
+    width: 400rpx;
+    height: 400rpx;
+  }
+
+.tapbtn1{
+    display: flex;
+    top:100px;
+  }
+
+.answer-button{
+    display: flex;
+    top:200px;
+    left:40rpx;
+}
+   

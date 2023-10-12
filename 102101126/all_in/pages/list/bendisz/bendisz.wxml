@@ -1,0 +1,18 @@
+<!--pages/list/bendisz/bendisz.wxml-->
+<!--进入游戏-->
+<!--对战界面接在bendi-->
+<view class="jinru">
+    <navigator url="/pages/list/bendi/bendi" open-type="navigate">
+    <button style="font-size: 3.5vh;" bindtap="gobendiyouxi">开始</button>
+    </navigator>
+  </view>
+
+<view>
+  <label class="input">游玩局数：</label>
+  <input class="input1" name="jushu" placeholder="---> 输入数字" bindinput="userjushu" />
+</view>>
+
+<view>
+  <label class="input">初始筹码：</label>
+  <input class="input1" name="chouma" placeholder="---> 输入筹码" bindinput="userchouma" />
+</view>

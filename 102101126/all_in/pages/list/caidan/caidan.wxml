@@ -1,0 +1,5 @@
+<!--pages/list/caidan/caidan.wxml-->
+<view class="image-parent">
+<navigator url="/pages/list/list" open-type="navigate">
+<image src="/pg/彩蛋界面-页面 1.png" class="image"></image></navigator>
+  </view>

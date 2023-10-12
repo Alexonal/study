@@ -1,0 +1,92 @@
+<!--pages/AI.wxml-->
+<bgm />
+<view class="content">
+    <image class='background' src="../../../img/backgroud.png" mode="aspectFill"></image>
+</view>
+<!-- <view>
+    <image class="back" src="../../img/back.png" mode="aspectFill"></image>
+</view> -->
+<view class="main">
+    
+    <view class="up">
+        <view class="block"></view>
+        <view class="menu">
+            <view class="jetton">
+                筹码：{{jetton2}}
+            </view>
+            <view>
+                总倍率：{{multiply}}
+            </view>
+        </view>
+        <view class="button">
+            <view class="lock" bindtap="locker" data-player="2">
+                锁定
+            </view>
+            <view bindtap="mul" data-player="2">
+                ✖{{m2}}
+            </view>
+        </view>
+
+        <view class="row_3">
+            <view class="item" bindtap="chioce" data-num="2" data-player="2">
+                <image src="{{p2[2]}}"></image>
+            </view>
+            <view class="item" bindtap="chioce" data-num="3" data-player="2">
+                <image src="{{p2[3]}}"></image>
+            </view>
+            <view class="item" bindtap="chioce" data-num="4" data-player="2">
+                <image src="{{p2[4]}}"></image>
+            </view>
+        </view>
+        <view class="row_2">
+            <view class="item" bindtap="chioce" data-num="0" data-player="2">
+                <image src="{{p2[0]}}"></image>
+            </view>
+            <view class="item" bindtap="chioce" data-num="1" data-player="2">
+                <image src="{{p2[1]}}"></image>
+            </view>
+        </view>
+        
+    </view>
+    <view class="down">
+        <view class="block"></view>
+        <view class="menu">
+            <view class="jetton">
+                筹码：{{jetton1}}
+            </view>
+            <view>
+                总倍率：{{multiply}}
+            </view>
+        </view>
+        <view class="button">
+            <view class="lock" bindtap="locker" data-player="1">
+                锁定
+            </view>
+            <view bindtap="mul" data-player="1">
+                ✖{{m1}}
+            </view>
+        </view>
+        
+        <view class="row_3">
+            <view class="item" bindtap="chioce" data-num="2" data-player="1">
+                <image src="{{p1[2]}}"></image>
+            </view>
+            <view class="item" bindtap="chioce" data-num="3" data-player="1">
+                <image src="{{p1[3]}}"></image>
+            </view>
+            <view class="item" bindtap="chioce" data-num="4" data-player="1">
+                <image src="{{p1[4]}}"></image>
+            </view>
+        </view>
+        <view class="row_2">
+            <view class="item" bindtap="chioce" data-num="0" data-player="1">
+                <image src="{{p1[0]}}"></image>
+            </view>
+            <view class="item" bindtap="chioce" data-num="1" data-player="1">
+                <image src="{{p1[1]}}"></image>
+            </view>
+        </view>
+        
+    </view>
+
+</view>

@@ -1,0 +1,24 @@
+/* pages/list/win2/win2.wxss */
+
+  text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size:25px
+}
+
+.answer-button1{
+    top:50px;
+}
+
+.answer-button2{
+    top:100px;
+}
+
+.answer-button3{
+    top:150px;
+}
+
+.answer-button4{
+    top:200px;
+}

@@ -1,0 +1,33 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/list/list",
+    "pages/list/bendi/bendi",
+    "pages/list/bendisz/bendisz",
+    "pages/list/AI/AI",
+    "pages/list/aisz/aisz",
+    "pages/list/lj/lj",
+    "pages/list/jf/jf",
+    "pages/list/guize/guize",
+    "pages/list/guize2/guize2",
+    "pages/list/guize3/guize3",
+    "pages/list/P2P/P2P",
+    "pages/list/win/win",
+    "pages/list/win2/win2",
+    "pages/list/win3/win3",
+    "pages/list/win4/win4",
+    "pages/list/lose/lose",
+    "pages/list/caidan/caidan",
+    "pages/list/caidan2/caidan2"
+
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle":"black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

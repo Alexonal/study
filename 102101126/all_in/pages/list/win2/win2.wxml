@@ -1,0 +1,26 @@
+<!--pages/list/win2/win2.wxml-->
+<view class="Gui" style="margin-top: 100px;">
+    <text>快问快答</text>
+    <text>胜利界面奖杯上有多少颗星？</text>
+  </view>
+
+  <view>
+<navigator url="/pages/list/win4/win4" open-type="navigate">
+<button class="answer-button1" bindtap="onSelect5">5</button></navigator>
+</view>
+
+<view>
+<navigator url="/pages/list/win4/win4" open-type="navigate">
+<button class="answer-button2" bindtap="onSelect6">6</button></navigator>
+</view>
+
+<view>
+<navigator url="/pages/list/win3/win3" open-type="navigate">
+<button class="answer-button3" bindtap="onSelect7">7</button></navigator>
+</view>
+
+<view>
+<navigator url="/pages/list/win4/win4" open-type="navigate">
+<button class="answer-button4" bindtap="onSelect8">8</button></navigator>
+</view>
+

@@ -1,0 +1,11 @@
+<!--pages/list/win3/win3.wxml-->
+<view class="Gui" style="margin-top: 100px;">
+    <text>这你都能记住</text>
+    <text>你果然是天才！</text>
+  </view>
+
+  <view>
+<navigator url="/pages/list/list" open-type="navigate">
+<button class="answer-button" bindtap="onSelectAnswerA">返回主界面</button></navigator>
+
+</view>

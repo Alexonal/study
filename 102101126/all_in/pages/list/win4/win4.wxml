@@ -1,0 +1,11 @@
+<!--pages/list/win4/win4.wxml-->
+<view class="Gui" style="margin-top: 100px;">
+    <text>记错了哦</text>
+    <text>再好好想想吧</text>
+  </view>
+
+  <view>
+<navigator url="/pages/list/list" open-type="navigate">
+<button class="answer-button" bindtap="onSelectAnswerA">返回主界面</button></navigator>
+
+</view>

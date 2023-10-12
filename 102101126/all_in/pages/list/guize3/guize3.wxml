@@ -1,0 +1,38 @@
+<!--pages/list/guize3/guize3.wxml-->
+<view class="Gui">
+    <text>
+    结算规则
+    </text>
+  </view>
+
+  <view class="Gui1" style="margin-top: 50px;">
+    <text>◇分数最高的玩家从所有其它玩家手里赢得</text>
+    <text>（二人分差的绝对值）*（总倍率）的筹码.</text>
+  </view>
+
+  <view class="Gui2" style="margin-top: 50px;">
+    <text>◇N局游戏后，筹码最多的玩家获胜。</text>
+  </view>
+
+  <view class="Gui3" style="margin-top: 50px;">
+    <text>◇如若中途有玩家筹码小于等于0，</text>
+    <text>则该玩家被击飞，游戏直接结束</text>
+  </view>
+
+  <view class="GuiX3w">
+    <navigator url="/pages/list/guize2/guize2"open-type="navigate">
+    <button type="" bindtap="goX4">上一页</button>
+    </navigator>
+  </view>
+
+  <view class="GuiX3p">
+    <navigator url="/pages/list/list"open-type="navigate">
+    <button type="" bindtap="goX5">主菜单</button>
+    </navigator>
+  </view>
+
+  <view class="Gui4">
+    <navigator url="/pages/list/caidan/caidan"open-type="navigate">
+    <button type="" bindtap="gog4"></button>
+    </navigator>
+  </view>

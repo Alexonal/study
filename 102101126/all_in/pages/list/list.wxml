@@ -1,0 +1,44 @@
+<!--pages/list/list.wxml-->
+<view class="content">
+	<!--背景标题文件-->
+	<image class='background' src="/pg/zjm/画布-页面1-bt.png" mode="aspectFill"></image>
+</view>
+
+<image class='zjm1' src="/pg/zjm/zhm-jt.png" mode="aspectFill"></image>
+
+<image class='zjm2' src="/pg/zjm/zhm-jt2.png" mode="aspectFill"></image>
+
+<image class='zjm3' src="/pg/zjm/zhm-jt.png" mode="aspectFill"></image>
+
+<image class='zjm4' src="/pg/zjm/zhm-jt2.png" mode="aspectFill"></image>
+
+<!--本地对战按钮-->
+<view class="buttonbendi">
+    <navigator url="/pages/list/bendisz/bendisz" open-type="navigate">
+    <button type="">本地对战</button>
+    </navigator>
+  </view> 
+<!--AI对战按钮-->
+  <view class="buttonAI">
+    <navigator url="/pages/list/aisz/aisz" open-type="navigate">
+    <button type="">AI对战</button>
+    </navigator>
+  </view> 
+<!--联机对战按钮-->
+  <view class="buttonlj">
+    <navigator url="/pages/list/lj/lj" open-type="navigate">
+    <button type="" bindtap="golj">联机对战</button>
+    </navigator>
+  </view> 
+<!--积分排名按钮-->
+  <view class="paihangbang">
+    <navigator url="/pages/list/jf/jf" open-type="navigate">
+    <button type="" bindtap="gophb">积分排名</button>
+    </navigator>
+  </view> 
+<!--游戏规则按钮-->
+  <view class="btn-area2">
+    <navigator url="/pages/list/guize/guize" open-type="navigate">
+    <button type="" bindtap="goguize">规则</button>
+    </navigator>
+  </view>

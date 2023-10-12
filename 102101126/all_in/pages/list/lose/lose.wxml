@@ -1,0 +1,17 @@
+<!--pages/list/lose/lose.wxml-->
+<view class="Gui">
+    <text>
+    你失败了 请再接再厉！
+    </text>
+  </view>
+
+<view>
+<button class="tapbtn1" style="width:60vw" bindtap="skyOnclick"><image class="tapimg1" src='/pg/OIP-C (2)(已处理).png'></image></button>
+</view>
+
+<view>
+
+<navigator url="/pages/list/list" open-type="navigate">
+<button class="answer-button" bindtap="onSelectAnswerA">返回主界面</button></navigator>
+
+</view>
