@@ -1,3 +1,5 @@
+create database shop;
+use shop;
 create table item(
     id int primary key auto_increment,
     name char(50) not null comment '名称',
