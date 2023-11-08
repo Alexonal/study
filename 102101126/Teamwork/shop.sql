@@ -20,5 +20,7 @@ create table form(
     user_id int comment '用户id',
     status char(2) comment '交易状态',
     start_time datetime comment '开始时间',
-    end_time datetime comment '结束时间'
+    end_time datetime comment '结束时间',
+    foreign key (item_id) references item(id),
+    foreign key (user_id) references user(id)
 ) comment '订单';
