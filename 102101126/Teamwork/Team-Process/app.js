@@ -16,9 +16,17 @@ App({
     wx.cloud.init({
       // 'cloud-7gcswidkff2409ba'是云环境id
       env:'cloud-7gcswidkff2409ba',
-    })
+    }),
+    wx.cloud.callFunction({
+      name: 'getOpenId',
+    }).then(res=>{
+      console.log(res);
+      this.globalData.openId = res.result.openid;
+    });
   },
   globalData: {
-    userInfo: null
-  }
+    userInfo: null,
+    openId:''
+  },
+  
 })

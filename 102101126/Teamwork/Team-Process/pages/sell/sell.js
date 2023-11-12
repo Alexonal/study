@@ -16,29 +16,46 @@ Page({
   },
   /*传入图片*/
   change() {
-    var model = !this.data.model;
+    // var model = !this.data.model;
     var that = this
     wx.chooseImage({
       count: that.data.count, // 默认3
       sizeType: ["original", "compressed"], // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ["album", "camera"], // 可以指定来源是相册还是相机，默认二者都有
       success: function (res) {
+        that.data.imgs.push(res.tempFilePaths[0]);
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
-        console.log(1111)
-        var tempFilePaths = res.tempFilePaths
-        console.log(tempFilePaths, 2222)
-        for (var i = 0; i < tempFilePaths.length; i++) {
-          that.data.imgs.push(tempFilePaths[i]);
-        }
-        var imgs = that.data.imgs
-        console.log(imgs, 3333)
+        // console.log(1111)
+        // var tempFilePaths = res.tempFilePaths
+        // console.log(tempFilePaths, 2222)
+        // for (var i = 0; i < tempFilePaths.length; i++) {
+        //   that.data.imgs.push(tempFilePaths[i]);
+        // }
+        // var imgs = that.data.imgs
+        // console.log(imgs, 3333)
         that.setData({
-          model: model,
+          //model: model,
           imgs: that.data.imgs
-        })
+        });
+        that.uploadDetailImage();
       }
     })
   },
+  uploadDetailImage(){
+    var that = this;
+    for(var i = 0;i < this.data.imgs.length;i++){
+      var path = this.data.imgs[i];
+      wx.cloud.uploadFile({
+        cloudPath: 'goods/'+ `${Math.random()}_${Date.now()}/` + path.split('/').pop(),
+        filePath: path,
+        success(res){
+          console.log("fileID=" + res.fileID);
+          that.data.imageUrls.push(res.fileID);
+        }
+      })
+    }
+  },
+
   bindUpload: function (e) {
     let index = e.currentTarget.dataset.index
     wx.previewImage({
@@ -123,13 +140,14 @@ Page({
     console.log(money, 222);
     console.log(message, 333);
     console.log(contact, 444);
+    console.log(this.data.imageUrls);
     wx.cloud.database().collection('goods').add({
       data:{
         name:this.data.name,
         detail:this.data.message,
+        imgfileID:this.data.imageUrls,
         contact:this.data.contact,
         type:1,
-        img:this.data.imgs,
         special:{
           money : this.data.money
         }

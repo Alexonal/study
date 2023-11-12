@@ -38,7 +38,6 @@ Page({
     }).get()
     .then(res=>{
       console.log(res);
-      console.log(res.data[0].contact);
     });
     // wx.request({
     //   url:"", 

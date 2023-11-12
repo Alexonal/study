@@ -1,2 +1,4 @@
 <!--pages/display/display.wxml-->
 <text>pages/display/display.wxml</text>
+
+<button bindtap="addOrder">下单</button>

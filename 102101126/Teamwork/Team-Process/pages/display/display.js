@@ -1,11 +1,15 @@
 // pages/display/display.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    publisher:'',
+    receiver:'',
+    goodId:'',
+    type:1
   },
 
   /**
@@ -14,7 +18,20 @@ Page({
   onLoad(options) {
 
   },
-
+  addOrder() {
+    
+    wx.cloud.database().collection('order').add({
+      data:{
+        publisher:this.data.publisher,
+        receiver:app.globalData.openId,
+        status:0,
+        good_id:this.data.goodId,
+        type:this.data.type
+      }
+    }).then(res=>{
+      console.log(res);
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
