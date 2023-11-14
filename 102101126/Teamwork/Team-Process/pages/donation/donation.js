@@ -5,14 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    multiArray: [['星期一', '星期二', '星期三', '星期四', '星期五'], ['9：00~12：00', '15：00~17：30']],
+    multiArray: [['星期一', '星期二', '星期三','星期四','星期五'], ['9：00~12：00', '15：00~17：30']],
     multiIndex: [0, 0],
     selectedValue: '',
-    name: '',
-    money: 0,
-    message: '无',
-    contact: '无',
-    weight: 0,
+    name:'',
+    money:0,
+    message:'无',
+    contact:'无',
+    weight:0,
   },
 
   /**
@@ -21,15 +21,21 @@ Page({
   onLoad(options) {
 
   },
-  /*输入信息*/
-  input(ev) {
-    var id = ev.currentTarget.id;
-    if (id == 'name') { this.data.name = ev.detail.value; }
-    else if (id == 'money') { this.data.money = ev.detail.value; }
-    else if (id == 'message') { this.data.message = ev.detail.value; }
-    else if (id == 'weight') { this.data.weight = ev.detail.value; }
-    else if (id == 'relax') { this.data.contact = ev.detail.value; }
-  },
+/*输入信息*/
+input(ev)
+{
+  var id=ev.currentTarget.id;
+  if(id=='name')
+  {this.data.name=ev.detail.value;}
+  else if(id=='money')
+  {this.data.money=ev.detail.value;}
+  else if(id=='message')
+  {this.data.message=ev.detail.value;}
+  else if(id=='weight')
+  {this.data.weight=ev.detail.value;}
+  else if(id=='relax')
+  {this.data.contact=ev.detail.value;}
+},
 
   onMultiPickerChange: function (event) {
     const multiIndex = event.detail.value;
@@ -41,57 +47,26 @@ Page({
       selectedValue: selectedValue,
     });
   },
-
-  /*确定信息，并传入后端 */
-  ok() {
-    var name = this.data.name;
-    var money = this.data.money;
-    var message = this.data.message;
-    var contact = this.data.contact;
-    var weight = this.data.weight;
-    console.log(name, 1111);
-    console.log(money, 222);
-    console.log(message, 333);
-    console.log(contact, 444);
-    console.log(weight, 5555);
-    wx.cloud.database().collection('donation_test').add({
-      data: {
-        name: this.data.name,
-        detail: this.data.money,
-        address: this.data.message,
-        date: this.data.selectedValue,
-        weight: this.data.weight,
-        contact: this.data.contact
-      }
-    }).then(res => {
-      console.log(res);
-    });
-
-
-    //  wx.request({
-    //    url:"", 
-    //    method: 'POST',
-    //    data: {
-    //    },
-    //    header: {
-    //      'content-type': 'application/json' // 默认值
-    //    },
-    //    success: (res) => {
-    //      if(res.statusCode == 200) {
-    //        console.log('用户信息已成功保存到后端');
-    //        console.log(res)//请求成功后的res
-    //      } else {
-    //        console.error('保存到后端失败:', res);
-    //      }
-    //    },
-    //    fail: (error) => {
-    //      console.error('请求失败:', error);
-    //    }
-    //  })
-    wx.navigateTo({
-      url: '/pages/home  page/home page',
-    })
-  },
+  
+ /*确定信息，并传入后端 */
+ ok()
+ {
+  wx.cloud.database().collection('donation_test').add({
+    data: {
+      name: this.data.name,
+      detail: this.data.money,
+      address: this.data.message,
+      date: this.data.selectedValue,
+      weight: this.data.weight,
+      contact: this.data.contact
+    }
+  }).then(res => {
+    console.log(res);
+  });
+   wx.navigateTo({
+     url: '/pages/home  page/home page',
+   })
+ },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

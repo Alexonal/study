@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    search :[{'name':'充电宝','img':'/image/思维导图.jpg','term':'待出租','way':'2r/day'},{'name':'naa','img':'/image/样式.jpg','term':'待出售','way':'59r'},{'name':'naa','img':'/image/样式.jpg','term':'待出售','way':'59r'},{'name':'naa','img':'/image/样式.jpg','term':'待出售','way':'59r'},{'name':'充电宝','img':'/image/思维导图.jpg','term':'待出租','way':'2r/day'}],
+    search :[],
     height:0,
     get:"",
   },
@@ -18,8 +18,6 @@ Page({
     this.setData({
       height: screenHeight - 380,
     })
-    
-
   },
   input(e)
   {
@@ -30,7 +28,7 @@ Page({
   },
   search()
   {
-    wx.cloud.database().collection('goods').where({
+  	wx.cloud.database().collection('goods').where({
       name:wx.cloud.database().RegExp({
         regexp: this.data.get,
         options:'i'
@@ -38,29 +36,47 @@ Page({
     }).get()
     .then(res=>{
       console.log(res);
+      var fileList = [];
+      var search=[];
+      var n = res.data.length;
+      for(var i = 0;i < n;i++)
+      {
+        var type = "";
+        var way = "";
+        var name = "";
+        if(res.data[i].type=='1')
+            {type="待出售";
+            way=res.data[i].special.money}
+        else if(res.data[i].type=='2')
+            {type="待交换";
+            way=res.data[i].special.item}
+        else if(res.data[i].type=='3')
+            {type="待出租";
+            way=res.data[i].special.money+'/'+res.data[i].special.rent_time}
+        var S={'name':res.data[i].name,'type':type,'way':way};
+        search.push(S);
+        fileList.push(res.data[i].img[0]);
+      }
+      console.log(fileList);
+      // 根据图片fileID获取图片临时链接
+      wx.cloud.getTempFileURL({
+        fileList: fileList,
+        success: result => {
+          console.log(result.fileList);
+          for(var j = 0;j < result.fileList.length;j++){
+            search[j]["img"] = result.fileList[j].tempFileURL;
+          }
+          
+          this.setData({
+            search:search
+          })
+          console.log(this.data.search);
+        },
+        fail: console.error
+      })
     });
-    // wx.request({
-    //   url:"", 
-    //   method: 'POST',
-    //   data: {
-    //     search:this.data.search
-    //   },
-    //   header: {
-    //     'content-type': 'application/json' // 默认值
-    //   },
-    //   success: (res) => {
-    //     if(res.statusCode == 200) {
-    //       console.log('用户信息已成功保存到后端');
-    //       console.log(res)//请求成功后的res
-    //     } else {
-    //       console.error('保存到后端失败:', res);
-    //     }
-    //   },
-    //   fail: (error) => {
-    //     console.error('请求失败:', error);
-    //   }
-    // })
   },
+
   select()
   {
     wx.navigateTo({

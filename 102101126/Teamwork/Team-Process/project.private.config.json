@@ -3,6 +3,5 @@
   "projectname": "Team-Process",
   "setting": {
     "compileHotReLoad": true
-  },
-  "cloudfunctionRoot": "cloud/"
+  }
 }

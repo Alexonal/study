@@ -9,6 +9,7 @@
     "pages/community/community",
     "pages/my/my",
     "pages/display/display",
+    "pages/index/index",
     "pages/logs/logs"
   ],
   "window":{

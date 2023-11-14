@@ -10,7 +10,7 @@
 </view>
 
 <scroll-view scroll-y="true" style="height:{{4*height}}rpx"> 
-<block wx:for="{{search}}" wx:key="index">
+<block wx:for="{{search}}">
   <template is="search" data="{{item: item}}" ></template>
 </block>
 </scroll-view>
@@ -23,7 +23,7 @@
 <canvas type="2d" class="picture" ><image src="{{item.img}}" ></image></canvas>
 <view class="article"  >
 <view>{{item.name}}</view>
-<view>{{item.term}}:{{item.way}}</view>
+<view>{{item.type}}:{{item.way}}</view>
 </view>
 </view>
 </template>

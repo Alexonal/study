@@ -66,17 +66,6 @@ input(ev)
   /*确定信息，并传入后端 */
 ok()
 {
-  var name=this.data.name;
-  var money=this.data.money;
-  var message=this.data.message;
-  var contact=this.data.contact;
-  var time=this.data.time;
-  console.log(name,1111);
-  console.log(money,222);
-  console.log(message,333);
-  console.log(contact,444);
-  console.log(time,5555);
-
   wx.cloud.database().collection('goods').add({
     data:{
       name:this.data.name,
@@ -92,29 +81,6 @@ ok()
   }).then(res=>{
     console.log(res);
   });
-
-
-  // wx.request({
-  //   url:"", 
-  //   method: 'POST',
-  //   data: {
-  //   },
-  //   header: {
-  //     'content-type': 'application/json' // 默认值
-  //   },
-  //   success: (res) => {
-  //     if(res.statusCode == 200) {
-  //       console.log('用户信息已成功保存到后端');
-  //       console.log(res)//请求成功后的res
-  //     } else {
-  //       console.error('保存到后端失败:', res);
-  //     }
-  //   },
-  //   fail: (error) => {
-  //     console.error('请求失败:', error);
-  //   }
-  // })
-
   wx.navigateTo({
     url: '/pages/home  page/home page',
   })
