@@ -1,0 +1,45 @@
+<!--pages/search/search.wxml-->
+
+<view class="coat">
+    <!-- 导航区 -->
+    <view class="back">
+        <scroll-view class="navig" scroll-x>
+        <!-- 推荐 -->
+            <view bindtap="activeNav" data-index="{{0}}" class="nav_item {{0===currentIndexNav?'active':''}}">推荐</view>
+        <!-- 搜索 -->
+            <view bindtap="activeNav" data-index="{{1}}" class="nav_item {{1===currentIndexNav?'active':''}}">搜索</view>
+        <!-- 我的帖子 -->
+            <view bindtap="activeNav" data-index="{{2}}" class="nav_item {{2===currentIndexNav?'active':''}}">我的帖子</view>
+    </scroll-view>
+    </view>
+    <!-- 搜索区 -->
+    <view class="search">
+        <!-- 搜索 -->
+        <form class="form">
+            <image class="form_img" src="../../icons/搜索.png" />
+            <input name="info" class="form_input" focus="true" confirm-type="search" bindconfirm="go_search" placeholder="搜索" />
+        </form>
+        <!-- 搜索记录 -->
+        <text class="sr">搜索记录</text>
+        <scroll-view class="record" scroll-x>
+            <view class="rec_item" wx:for="{{history}}" wx:for-index="index" wx:key="*this">{{history[history.length-index-1]}}</view>
+        </scroll-view>
+    </view>
+    <!-- 底部导航区 -->
+    <view class="bottom_nav">
+        <!-- 首页 -->
+        <view bindtap="skip" data-id="0" class="bt_item_1">
+            <image class="icon" src="../../icons/首页.png" /> 
+            <text >首页</text>
+        </view>
+        <!-- 发帖 -->
+        <view bindtap="skip" data-id="1" class="bt_item_up">
+            <image class="icon_up" src="../../icons/加号.png" /> 
+        </view>
+        <!-- 我的 -->
+        <view bindtap="skip" data-id="2" class="bt_item_2">
+            <image class="icon" src="../../icons/我的.png" /> 
+            <text >我的</text>
+        </view>
+    </view>
+</view>

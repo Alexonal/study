@@ -1,0 +1,39 @@
+<!--pages/detail/detail.wxml-->
+
+<view class="coat">
+    <!-- 抬头 -->
+    <view class="back">
+    <text class="title">精彩有趣</text>
+    </view>
+    <!-- 用户信息 -->
+    <view class="user">
+        <image class="head" src="{{my_user.head}}" />
+        <view class="name">{{my_user.myname}}</view>
+        <view class="time">{{my_post.time}}</view>
+    </view>
+    <!-- 帖子详情 -->
+    <scroll-view class="detail" scroll-y="{{true}}">
+        <view class="Dtitle">{{my_post.title}}</view>
+        <view class="Dcontent">{{my_post.content}}</view>
+        <view wx:for="{{my_post.img}}" wx:for-item="Mitem" wx:key="*this" >
+            <image class="Dimg" src="{{Mitem}}" mode="aspectFit" />
+        </view>
+        <scroll-view class="Dtag" scroll-x="{{true}}" >
+            <view class="tag" wx:for="{{my_post.tag}}" wx:key="*this">#{{item}}</view>
+        </scroll-view>
+    </scroll-view>
+    <view class="opera">
+            <image class="zc" src="../../icons/赞.png" />
+            <image class="zc" src="../../icons/评论.png" />
+    </view>
+    <!-- 评论区 -->
+    <scroll-view class="comment" scroll-y="{{true}}">
+        <view class="C_obj" wx:for="{{my_post.cmt}}" wx:for-item="Citem" wx:key="*this" >
+            <!-- 用户信息 -->
+            <image class="C_head" src="{{Citem.head}}" />
+            <view class="C_name">{{Citem.name}}</view>
+            <view class="C_content">{{Citem.content}}</view>
+            <view class="C_time">{{Citem.time}}</view>
+        </view>
+    </scroll-view>
+</view>

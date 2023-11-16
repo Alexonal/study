@@ -1,0 +1,56 @@
+<!--pages/my_card/my_card.wxml-->
+
+<view class="coat">
+    <!-- 导航区 -->
+    <view class="back">
+        <scroll-view class="navig" scroll-x>
+        <!-- 推荐 -->
+            <view bindtap="activeNav" data-index="{{0}}" class="nav_item {{0===currentIndexNav?'active':''}}">推荐</view>
+        <!-- 搜索 -->
+            <view bindtap="activeNav" data-index="{{1}}" class="nav_item {{1===currentIndexNav?'active':''}}">搜索</view>
+        <!-- 我的帖子 -->
+            <view bindtap="activeNav" data-index="{{2}}" class="nav_item {{2===currentIndexNav?'active':''}}">我的帖子</view>
+    </scroll-view>
+    </view>
+    <!-- 我的帖子浏览区 -->
+    <scroll-view scroll-y class="scan">
+        <!-- 帖子外观 -->
+        <view class="post" wx:for="{{my_user.post}}" wx:key="*this" >
+            <view class="time">{{item.time}}</view>
+            <!-- 版块-内容 :标题，简介;点击进入帖子详情 -->
+            <view bindtap="click_detail" data-detail="{{item}}" class="content">
+                <!-- 内容-标题 -->
+                <text class="title">{{item.title}}
+                </text>
+                <!-- 内容-简介 :显示帖子部分内容，限制为三行 -->
+                <text class="intro">{{item.content}}
+                </text>
+            </view>
+            <!-- 版块-操作 :点赞、评论;点击进行相应的操作 -->
+            <view class="opera">
+                <!-- 操作-点赞:点击进行点赞 -->
+                <image bindtap="zan" data-index='0' class="zan" src="{{Z_img[0]}}" />
+                <!-- 操作-评论:点击进行评论 -->
+                <image bindtap="comment" data-index='0' class="comment" src="../../icons/评论.png" />
+            </view>
+        </view>
+
+    </scroll-view>       
+    <!-- 底部导航区 -->
+    <view class="bottom_nav">
+        <!-- 首页 -->
+        <view bindtap="skip" data-id="0" class="bt_item_1">
+            <image class="icon" src="../../icons/首页.png" /> 
+            <text >首页</text>
+        </view>
+        <!-- 发帖 -->
+        <view bindtap="skip" data-id="1" class="bt_item_up">
+            <image class="icon_up" src="../../icons/加号.png" /> 
+        </view>
+        <!-- 我的 -->
+        <view bindtap="skip" data-id="2" class="bt_item_2">
+            <image class="icon" src="../../icons/我的.png" /> 
+            <text >我的</text>
+        </view>
+    </view>
+</view>

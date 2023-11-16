@@ -1,0 +1,24 @@
+<!--pages/home/home.wxml-->
+
+<view class="coat">
+    <!-- 抬头 -->
+    <view class="back"></view>
+    <!-- 用户信息 -->
+    <view class="user">
+        <image class="head" src="{{my_user.head}}" />
+        <view class="name">昵称：{{my_user.name}}</view>
+        <view class="credit">信誉积分：{{my_user.mycredit}}</view>
+    </view>
+    <!-- 物品信息 -->
+    <view class="obj">
+        <text class="tip">————宝贝：超值有趣————</text>
+        <scroll-view class="mess" scroll-y="{{true}}">
+            <view class="sin" wx:for="{{my_user.my_obj}}" wx:for-item="Uitem"  wx:key="*this" >
+                <image class="sin_obj" mode="scaleToFill" src="{{Uitem.image}}" />
+                <text class="sin_text">{{Uitem.intro}}</text>
+            </view>
+        </scroll-view>
+        
+    </view>
+    
+</view>
