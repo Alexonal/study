@@ -10,11 +10,17 @@ Page({
  jump(ev) { 
     let id = ev.currentTarget.id;
     console.log(id);
-    let page={'select':'/pages/select/select','sell':'/pages/sell/sell','rent':'/pages/rent/rent','exchange':'/pages/exchange/excange','donation':'/pages/donation/donation','home':'/pages/home  page/home page','community':'/pages/community/community','my':'/pages/my/my'};
-  wx.navigateTo
+    let page={'select':'/pages/select/select','sell':'/pages/sell/sell','rent':'/pages/rent/rent','exchange':'/pages/exchange/excange','donation':'/pages/donation/donation','home':'/pages/home  page/home page','community':'/pages/recommend/recommend','my':'/pages/my/my'};
+    if(id=='community'||id=='my')
+    wx.redirectTo({
+      url:page[id],
+    })
+    else
+  {wx.navigateTo
     ({
         url: page[id]
     }) 
+  }
 },
   /**
    * 生命周期函数--监听页面加载

@@ -1,16 +1,31 @@
 {
   "pages":[
+    
     "pages/home  page/home page" ,
     "pages/sell/sell",
     "pages/select/select",
     "pages/rent/rent",
     "pages/exchange/excange",
     "pages/donation/donation",
-    "pages/community/community",
-    "pages/my/my",
-    "pages/display/display",
     "pages/index/index",
+    "pages/display/display",
+    "pages/tijiao/tijiao",
+    "pages/information/information",
+    "pages/recommend/recommend",
+    "pages/my/my",
     "pages/logs/logs"
+  ],
+  "subpackages": [
+    {
+      "root": "pages/packages_c",
+      "pages": [
+        "pages/search/search",
+        "pages/my_card/my_card",
+        "pages/upload/upload",
+        "pages/home/home",
+        "pages/detail/detail"
+      ]
+    }
   ],
   "window":{
     "backgroundTextStyle":"light",

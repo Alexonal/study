@@ -51,8 +51,8 @@ input(ev)
  /*确定信息，并传入后端 */
  ok()
  {
-  wx.cloud.database().collection('donation_test').add({
-    data: {
+  wx.cloud.database().collection('goods').add({
+    data:{
       name: this.data.name,
       detail: this.data.money,
       address: this.data.message,
@@ -60,8 +60,8 @@ input(ev)
       weight: this.data.weight,
       contact: this.data.contact
     }
-  }).then(res => {
-    console.log(res);
+  }).then(res=>{
+    console.log(res);    
   });
    wx.navigateTo({
      url: '/pages/home  page/home page',

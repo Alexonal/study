@@ -6,6 +6,7 @@ Page({
    */
   data: {
     search :[],
+    image:[],
     height:0,
     get:"",
   },
@@ -39,7 +40,8 @@ Page({
       var fileList = [];
       var search=[];
       var n = res.data.length;
-      for(var i = 0;i < n;i++)
+      var i=0;
+      for(i = 0;i < n;i++)
       {
         var type = "";
         var way = "";
@@ -52,35 +54,43 @@ Page({
             way=res.data[i].special.item}
         else if(res.data[i].type=='3')
             {type="待出租";
-            way=res.data[i].special.money+'/'+res.data[i].special.rent_time}
-        var S={'name':res.data[i].name,'type':type,'way':way};
+            way=res.data[i].special.money+'r /'+res.data[i].special.rent_time}
+        var S={'id':i,'name':res.data[i].name,'type':type,'way':way,'detail':res.data[i].detail,'contact':res.data[i].contact,'openid':res.data[i]._openid};
         search.push(S);
         fileList.push(res.data[i].img[0]);
-      }
-      console.log(fileList);
+        this.data.image.push(res.data[i].img)
+        console.log(this.data.image)
+     }
+    console.log(fileList);
+    for(var i=0;i< fileList.length;i++)
+    {
+      search[i]['img']=fileList[i];
+    }
+    // console.log(fileList);
       // 根据图片fileID获取图片临时链接
-      wx.cloud.getTempFileURL({
-        fileList: fileList,
-        success: result => {
-          console.log(result.fileList);
-          for(var j = 0;j < result.fileList.length;j++){
-            search[j]["img"] = result.fileList[j].tempFileURL;
-          }
-          
+    //   wx.cloud.getTempFileURL({
+    //     fileList: fileList,
+    //     success: result => {
+    //       console.log(result.fileList);
+    //       for(var j = 0;j < result.fileList.length;j++){
+    //         search[j]["img"] = result.fileList[j].tempFileURL;
+    //       }
           this.setData({
-            search:search
+            search:search,
+            image:this.data.image
           })
           console.log(this.data.search);
-        },
-        fail: console.error
-      })
+    //     },
+    //     fail: console.error
+    //   })
     });
   },
-
-  select()
+  select:function(e)
   {
+    var id=e.currentTarget.dataset.id;
+    // var search=this.data.search;
     wx.navigateTo({
-      url: '/pages/display/display',
+      url: '/pages/display/display?information=' + JSON.stringify(this.data.search[id]) + '&image='+JSON.stringify(this.data.image[id])+'&in='+ true,
     });
   },
   /**

@@ -1,4 +1,5 @@
 // pages/sell/sell.js
+const app = getApp();
 Page({
 
   /**
@@ -15,30 +16,38 @@ Page({
     model:false,
   },
 /*传入图片*/
-change(){
-var model=!this.data.model;
-var that = this
-wx.chooseImage({
-  count: that.data.count, // 默认3
-  sizeType: ["original", "compressed"], // 可以指定是原图还是压缩图，默认二者都有
-  sourceType: ["album", "camera"], // 可以指定来源是相册还是相机，默认二者都有
-  success: function (res) {
-    // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
-    console.log(1111)
-    var tempFilePaths = res.tempFilePaths
-    console.log(tempFilePaths,2222)
-    for(var i=0;i<tempFilePaths.length;i++)
-    {
-      that.data.imgs.push(tempFilePaths[i]);
+change() {
+  var that = this
+  var model=!this.data.model;
+  wx.chooseImage({
+    count: that.data.count, // 默认3
+    sizeType: ["original", "compressed"], // 可以指定是原图还是压缩图，默认二者都有
+    sourceType: ["album", "camera"], // 可以指定来源是相册还是相机，默认二者都有
+    success: function (res) {
+      that.data.imgs.push(res.tempFilePaths[0]);
+
+      that.setData({
+        imgs: that.data.imgs,
+        model:model
+      });
+      that.uploadDetailImage();
     }
-    var imgs=that.data.imgs
-    console.log(imgs,3333)
-    that.setData({
-      model:model,
-      imgs: that.data.imgs
+  })
+},
+uploadDetailImage(){
+  var that = this;
+  for(var i = 0;i < this.data.imgs.length;i++){
+    var path = this.data.imgs[i];
+    wx.cloud.uploadFile({
+      cloudPath: 'goods/'+ path.split('/').pop(),
+      filePath: path,
+      success(res){
+        console.log("fileID=" + res.fileID);
+        that.data.imageUrls.push(res.fileID);
+        console.log(that.data.imageUrls)
+      }
     })
   }
-})
 },
 bindUpload: function (e) {
   let index = e.currentTarget.dataset.index
@@ -72,15 +81,17 @@ ok()
       img:this.data.imageUrls,
       special:{
         item : this.data.money
-      }
+      },
+      owner:app.globalData.my_user.user
     }
   }).then(res=>{
-    console.log(res);
-    
+    console.log(res);   
+    console.log(this.data.imageUrls);
+    wx.navigateTo({
+      url: '/pages/home  page/home page',
+    })
   });
-  wx.navigateTo({
-    url: '/pages/home  page/home page',
-  })
+
 },
   /**
    * 生命周期函数--监听页面加载

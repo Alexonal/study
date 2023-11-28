@@ -35,4 +35,4 @@
 </view>
 
 <!--确定，将数据后端-->
-<button class="ok" bindtap="ok">确定出售</button>
+<button class="ok" bindtap="ok">确定</button>
