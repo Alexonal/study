@@ -1,0 +1,26 @@
+<!--index.wxml-->
+<view class="search-box">
+    <input type="text" placeholder="请输入商品信息" class="input-cell"/>
+    <image src="../../img/search.png" class="search-img" mode=""/>
+</view>
+<view class="swiper-wrap">
+    <swiper class="swiper-box" indicator-dots="true">
+        <block wx:for="{{bannerList}}">
+            <swiper-item>
+                <image src="{{item.cover}}" bindtap="toBannerDetail" data-id="{{item._id}}" class="swiper-img" mode=""/>
+            </swiper-item>
+        </block> 
+    </swiper>
+</view>
+
+<view class="goods-box">
+    <view>
+        <image src="" class="good-img" mode=""/>
+        <view>标题</view>
+        <view class="good-bottom">
+            <View>库存</View>
+            <View>价格</View>
+        </view>
+    </view>
+
+</view>

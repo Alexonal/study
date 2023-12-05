@@ -1,0 +1,5 @@
+<!--pages/index/bannerDetail/bannerDetail.wxml-->
+<view class="title" bindtap="addr">{{banner.title}}</view>
+<view class="rich">
+    <rich-text nodes="{{banner.content}}"></rich-text>
+</view>

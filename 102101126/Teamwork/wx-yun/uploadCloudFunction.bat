@@ -1,0 +1,1 @@
+"C:\Program Files (x86)\Tencent\微信web开发者工具\cli.bat" cloud functions deploy --e cloud-7gcswidkff2409ba --n quickstartFunctions --r --project "C:\Users\21822\Desktop\study\102101126\Teamwork\wx-yun" --report_first --report

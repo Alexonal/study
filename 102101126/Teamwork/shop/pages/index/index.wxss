@@ -1,0 +1,78 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #aaa;
+}
+
+.userinfo-avatar {
+  overflow: hidden;
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+
+/* 搜索框 */
+.search-box {
+    display: flex;
+    flex-direction: row;
+    border: 1rpx solid #f7f7f7;
+    margin: 0 20rpx;
+    padding: 0 20rpx;
+    border-radius: 20rpx;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-img {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.input-cell {
+    padding: 20rpx 20rpx;
+    width: 600rpx;
+}
+
+/* 轮播图 */
+.swiper-wrap {
+    padding: 20rpx 20rpx;
+}
+
+.swiper-box {
+    height: 400rpx;
+}
+
+.swiper-img {
+    width: 100%;
+    border-radius: 20rpx;
+    height: 400rpx;
+}
+
+.goods-box {
+    display: flex;
+    flex-direction: row;
+    padding: 0 20rpx;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.good-img {
+    width: 300rpx;
+    height:400rpx;
+    border-radius: 20rpx;
+}
+
+.good-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 30rpx;
+}
