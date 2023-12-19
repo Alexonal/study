@@ -51,6 +51,7 @@ Page({
       that.setData({
         rent:res.data
       })
+      this.setData({rent:[1]})
     })
   },
 

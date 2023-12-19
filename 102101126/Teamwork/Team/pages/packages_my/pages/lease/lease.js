@@ -71,6 +71,7 @@ Page({
       that.setData({
         order:res.result.list
       })
+      this.setData({order:[1]})
     })
   },
   progress:function(e)

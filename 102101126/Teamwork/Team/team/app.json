@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/home  page/home page",
+    "pages/my/my",
+    "pages/recommend/recommend",
+    "pages/logs/logs",
+    "pages/login/login"
+  ],
+  "subpackages": [
+    {
+      "root": "pages/packages_home",
+      "pages": [
+        "pages/sell/sell",
+        "pages/select/select",
+        "pages/rent/rent",
+        "pages/exchange/excange",
+        "pages/donation/donation",
+        "pages/display/display",
+        "pages/tijiao/tijiao",
+        "pages/information/information"
+      ]
+    },
+    {
+      "root": "pages/packages_c",
+      "pages": [
+        "pages/search/search",
+        "pages/my_card/my_card",
+        "pages/upload/upload",
+        "pages/home/home",
+        "pages/detail/detail"
+      ]
+    },
+    {
+      "root": "pages/packages_my",
+      "pages": [
+        "pages/sell/sell",
+        "pages/donation/donation",
+        "pages/exchange/exchange",
+        "pages/lease/lease",
+        "pages/sellwill/sellwill",
+        "pages/leasewill/leasewill",
+        "pages/exchangewill/exchangewill",
+        "pages/chatroom/chatroom"
+      ]
+    }
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FAFFDE",
+    "navigationBarTitleText": "大学生闲置物品",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

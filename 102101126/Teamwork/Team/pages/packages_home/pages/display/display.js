@@ -25,7 +25,6 @@ Page({
     var ge = JSON.parse(options.in)
     this.data.openid = information.openid;
     this.data.id = information._id;
-    console.log(image);
     if (information.type == '待交换')
       this.data.model = false
     this.setData({
@@ -114,13 +113,15 @@ Page({
     }).then(res=>{
       console.log(res)
     })
+    var that = this;
     wx.cloud.database().collection('goods').where({
-      _id:this.data.id
+      _id:that.data.id
     }).update({
       data:{
         deal:true
       }
-    }).then(res=>{
+    })
+    .then(res=>{
       console.log(res)
     })
     wx.navigateTo({

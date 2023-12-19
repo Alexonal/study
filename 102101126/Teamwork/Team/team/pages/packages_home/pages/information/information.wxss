@@ -1,0 +1,88 @@
+/* pages/information/information.wxss */
+.xinxi{
+  width: 1000rpx;
+}
+.xinxi image{
+  position: relative;
+  margin-top:-60px;
+  width:100px;
+  height: 100px;
+  left:40%;
+  transform: translate(-50%,0%);
+  border-radius: 50%;
+}
+.nick{
+  position: relative;
+  top:20px;
+  left:-15%;
+  padding-right: 20px;
+  font-weight: 500;
+  font-size: 20px;
+}
+.wan text{
+  position: relative;
+  display:flex;
+  top:-20rpx;
+  left:-30%;
+  justify-content: flex-end;
+  font-weight: 500;
+  font-size: 20px;
+}
+/* .xinxi text:nth-child(3){
+  position: relative;
+  left:30px;
+  } */
+
+.split{
+  position:absolute;
+  top:35%;
+  display:flex;
+}
+.split text:nth-child(2){
+  position: relative;
+  font-size: 26px;
+  top:-15px;
+  color: #7CC083;
+}
+.scroll{
+  position:relative;
+  top:-100rpx;
+}
+
+.margin{
+  position:relative;
+  display: inline-block;
+  margin: 30px;
+  vertical-align: top;
+}
+.picture{
+  position:relative;
+  top:100px;
+  left:5%;
+  border: 1px solid black;
+  width:116px;
+  height: 138px;
+  border-radius: 14px;
+
+}
+.picture image{
+  display:block;
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+
+}
+.over{
+  position:absolute;
+  width:100px;
+  height: 43px;
+  top:35%;
+  left: 5%;
+}
+
+.article{
+position:relative;
+top:100px;
+left:10%;
+overflow: hidden;
+}

@@ -52,7 +52,7 @@ App({
       // 'cloud-7gcswidkff2409ba'是云环境id
       env: 'cloud-7gcswidkff2409ba',
     })
-    
+
 
     // 展示本地存储能力
     const logs = wx.getStorageSync('logs') || []
@@ -111,6 +111,7 @@ App({
                       nickname:this.globalData.nickName,
                       order:0,
                       complete:0,
+                      rate:0
                     }
                   }
                   else{
